@@ -1,143 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nexus - Futuristic Global Community</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <title>Nexus-futuristic global community</title>
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-    <div class="app-container">
-        <!-- Auth Overlay -->
-        <div class="auth-overlay" id="authOverlay">
-            <div class="auth-box">
-                <h2>Welcome to Nexus</h2>
-                <div class="auth-tabs">
-                    <button class="active" id="loginTab">Login</button>
-                    <button id="registerTab">Register</button>
-                </div>
-                <form id="loginForm">
-                    <input type="email" placeholder="Quantum Email" required>
-                    <input type="password" placeholder="Holographic Password" required>
-                    <button type="submit">Beam In</button>
-                </form>
-                <form id="registerForm" style="display: none;">
-                    <input type="text" placeholder="Neural Username" required>
-                    <input type="email" placeholder="Quantum Email" required>
-                    <input type="password" placeholder="Holographic Password" required>
-                    <button type="submit">Join Nexus</button>
-                </form>
-            </div>
-        </div>
-
-        <!-- Main App -->
-        <div class="main-app" id="mainApp" style="display: none;">
-            <!-- Sidebar -->
-            <div class="sidebar">
-                <div class="logo">
-                    <i class="fas fa-atom"></i>
-                    <span>NEXUS</span>
-                </div>
-                <div class="user-profile">
-                    <div class="avatar" id="userAvatar">
-                        <img src="https://i.pravatar.cc/150" alt="User Avatar">
-                    </div>
-                    <span class="username" id="username">QuantumTraveler</span>
-                </div>
-                <nav class="main-nav">
-                    <ul>
-                        <li class="active" data-section="feed"><i class="fas fa-home"></i> Quantum Feed</li>
-                        <li data-section="chat"><i class="fas fa-comments"></i> Hologram Chat</li>
-                        <li data-section="calls"><i class="fas fa-video"></i> Neural Calls</li>
-                        <li data-section="shorts"><i class="fas fa-clock"></i> Temporal Shorts</li>
-                        <li data-section="explore"><i class="fas fa-globe"></i> Cosmic Explore</li>
-                    </ul>
-                </nav>
-                <div class="app-settings">
-                    <button id="themeToggle"><i class="fas fa-moon"></i> Dark Matter</button>
-                    <button id="logoutBtn"><i class="fas fa-sign-out-alt"></i> Quantum Logout</button>
-                </div>
-            </div>
-
-            <!-- Main Content -->
-            <div class="main-content">
-                <!-- Feed Section -->
-                <section class="content-section active" id="feed">
-                    <h2>Quantum Feed</h2>
-                    <div class="feed-container">
-                        <!-- Posts will appear here -->
-                    </div>
-                </section>
-
-                <!-- Chat Section -->
-                <section class="content-section" id="chat">
-                    <div class="chat-container">
-                        <div class="chat-sidebar">
-                            <div class="chat-search">
-                                <input type="text" placeholder="Search neural connections...">
-                            </div>
-                            <div class="chat-list">
-                                <!-- Chat list items will appear here -->
-                            </div>
-                        </div>
-                        <div class="chat-window">
-                            <div class="chat-header">
-                                <div class="chat-user">
-                                    <img src="https://i.pravatar.cc/150?img=5" alt="User Avatar">
-                                    <span>CosmicExplorer</span>
-                                </div>
-                            </div>
-                            <div class="chat-messages" id="chatMessages">
-                                <!-- Messages will appear here -->
-                            </div>
-                            <div class="chat-input">
-                                <input type="text" placeholder="Transmit your message...">
-                                <button><i class="fas fa-paper-plane"></i></button>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-
-                <!-- Calls Section -->
-                <section class="content-section" id="calls">
-                    <h2>Neural Calls</h2>
-                    <div class="calls-container">
-                        <div class="call-controls">
-                            <button id="startCall"><i class="fas fa-video"></i> Initiate Neural Link</button>
-                            <button id="joinCall"><i class="fas fa-phone-alt"></i> Join Quantum Channel</button>
-                        </div>
-                        <div class="call-window">
-                            <video id="localVideo" autoplay muted></video>
-                            <video id="remoteVideo" autoplay></video>
-                        </div>
-                    </div>
-                </section>
-
-                <!-- Shorts Section -->
-                <section class="content-section" id="shorts">
-                    <h2>Temporal Shorts</h2>
-                    <div class="shorts-container">
-                        <div class="upload-short">
-                            <input type="file" id="shortUpload" accept="image/*,video/*" style="display: none;">
-                            <label for="shortUpload" class="upload-btn">
-                                <i class="fas fa-plus"></i>
-                                <span>Upload Temporal Memory</span>
-                            </label>
-                        </div>
-                        <div class="shorts-feed">
-                            <!-- Shorts will appear here -->
-                        </div>
-                    </div>
-                </section>
-            </div>
-        </div>
+  <!-- Authentication Overlay -->
+  <div id="authOverlay" style="display:flex;position:fixed;top:0;left:0;width:100vw;height:100vh;align-items:center;justify-content:center;z-index:1000;background:rgba(0,0,0,0.7);">
+    <div class="auth-container">
+      <div class="auth-tabs">
+        <button id="loginTab" class="active">Login</button>
+        <button id="registerTab">Register</button>
+      </div>
+      <form id="loginForm" style="display:block;">
+        <h2>Login</h2>
+        <input type="email" placeholder="Email" required />
+        <input type="password" placeholder="Password" required />
+        <button type="submit">Login</button>
+      </form>
+      <form id="registerForm" style="display:none;">
+        <h2>Register</h2>
+        <input type="text" placeholder="Username" required />
+        <input type="email" placeholder="Email" required />
+        <input type="password" placeholder="Password" required />
+        <button type="submit">Register</button>
+      </form>
     </div>
+  </div>
 
-    <script src="../src/js/auth.js"></script>
-    <script src="../src/js/chat.js"></script>
-    <script src="../src/js/calls.js"></script>
-    <script src="../src/js/shorts.js"></script>
-    <script src="../src/server/server.js"></script>
+  <!-- Main App Interface -->
+  <div id="mainApp" style="display:none;">
+    <header>
+      <span id="username"></span>
+      <button id="logoutBtn">Logout</button>
+    </header>
+    <!-- Your main app content goes here -->
+    <h1>Welcome to Nexus</h1>
+    <p>This is the main content area.</p>
+  </div>
+
+  <!-- Scripts -->
+  <script src="/src/js/auth.js"></script>
+  <!-- You can add other scripts here, e.g., chat.js, calls.js, etc. -->
 </body>
-  </html>
+</html>
