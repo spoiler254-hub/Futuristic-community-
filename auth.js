@@ -63,6 +63,28 @@ document.addEventListener('DOMContentLoaded', function() {
             icon.classList.remove('fa-sun');
             icon.classList.add('fa-moon');
             themeToggle.innerHTML = '<i class="fas fa-moon"></i> Dark Matter';
+            <script>
+document.addEventListener('DOMContentLoaded', function() {
+    const loginTab = document.getElementById('loginTab');
+    const registerTab = document.getElementById('registerTab');
+    const loginForm = document.getElementById('loginForm');
+    const registerForm = document.getElementById('registerForm');
+
+    loginTab.addEventListener('click', function() {
+        loginTab.classList.add('active');
+        registerTab.classList.remove('active');
+        loginForm.style.display = '';
+        registerForm.style.display = 'none';
+    });
+
+    registerTab.addEventListener('click', function() {
+        registerTab.classList.add('active');
+        loginTab.classList.remove('active');
+        registerForm.style.display = '';
+        loginForm.style.display = 'none';
+    });
+});
+</script>
         }
     });
 });
